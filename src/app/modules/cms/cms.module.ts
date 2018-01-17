@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AGMaterialModule } from '../../material';
 import { RouterModule, Routes } from '@angular/router';
@@ -20,6 +20,7 @@ const appRoutes: Routes = [
   imports: [
     CommonModule,    
     FormsModule,
+    ReactiveFormsModule,
     NoopAnimationsModule,
     AGMaterialModule,
     RouterModule.forRoot(appRoutes,{ enableTracing: false } )

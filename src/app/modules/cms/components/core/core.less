@@ -22,6 +22,7 @@
             justify-content: flex-start;
             svg { margin-right: 10px;  }
             .title { font-size: 16px; white-space: nowrap; text-transform: capitalize;}
+
         }
 
         .nav-header {
@@ -68,6 +69,7 @@
                 &.row-type-2 { padding: 10px;}
                 &.row-type-3 { padding: 10px; justify-content: center; }
                 &:hover { color: @color2; }
+                &.active { color: @color2; font-weight: bold; cursor: default;}
             }
             .nav-divider { flex: 1 1 auto; }
         }
@@ -77,17 +79,5 @@
         width: 100%;        
         overflow-y: auto;
         padding: 20px;        
-    }
-
-    /* Common elements */
-    .btn {
-        color: @color1;
-        border: 2px solid @color1;
-        border-radius: 50px;
-        padding: 5px 10px;
-        display: flex;
-        transition: 0.5s all ease;
-
-        &:hover { background-color: @color1; color: rgba(255,255,255,1);}
     }
 }

@@ -23,10 +23,8 @@
                 <div class="user-txt user-name">Please Login</div>
                 <div class="user-txt user-title">to access the Clinton AMEZ Site Editor.</div>
             </div>        
-            <div class="icon-row row-type-3">
-                <div class="btn">
-                    <i class="fas fa-unlock-alt"></i><div class="title">Login</div>
-                </div>
+            <div [class]="'icon-row row-type-2 ' + isActive('signin')">
+                <i class="fas fa-unlock-alt"></i><div class="title">Login</div>
             </div>
         </div>
     </div>

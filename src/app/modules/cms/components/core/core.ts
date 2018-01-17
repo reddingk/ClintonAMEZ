@@ -42,10 +42,11 @@ export class CMSCoreComponent implements OnInit, AfterViewInit {
     this.authService.validateUser(function(res){
       self.userInfo = res;
       self.buildNavData(res);
+      self.setTemplate(self.navData.selectedTemp);
     });    
   } 
   ngAfterViewInit() {
-    this.setTemplate(this.navData.selectedTemp);
+    //this.setTemplate(this.navData.selectedTemp);
   }
   
   /* Set CMS Template */
@@ -80,6 +81,11 @@ export class CMSCoreComponent implements OnInit, AfterViewInit {
   /* Check if logged in user is an Admin */
   public isAdmin(){
     return (this.userInfo != null && this.userInfo.adminStatus);
+  }
+
+  /* Check if navitem is active */
+  public isActive(name){
+    return (this.navData.selectedTemp == name ? 'active' : '');
   }
   /*End*/
 }

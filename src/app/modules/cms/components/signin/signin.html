@@ -1,1 +1,22 @@
-<h1>Signin - Component</h1>
+<div class="cms-content signin">
+    <div class="cms-container">
+        <form class="signin-form">
+            <h1>Please sign in below</h1>
+            <!-- Email -->
+             <mat-form-field>
+                <input matInput placeholder="Enter your email" [formControl]="email" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+
+            <!-- Password -->
+            <mat-form-field>
+                <input matInput placeholder="Enter your password" type="password">
+            </mat-form-field>
+
+            <div class="btn-row">
+                <div class="btn"><i class="fas fa-unlock-alt"></i><div class="title">Login</div></div>
+            </div>
+            
+        </form>
+    </div>
+</div>
