@@ -19,11 +19,11 @@ export class AuthService {
         }
     }
 
-    loginUser(username, password, callback) {
+    loginUser(email, password, callback) {
         // Test
         let userInfo: UserInfoModel = new UserInfoModel('Kris','Redding', 'Site Admin', 'test3@gmail.com', true, { "announcements":true, "calender":true, "gallery":true, "forms":true, "ministries":true });
 
-        if(username.length > 0 && password.length > 0) {
+        if(email.length > 0 && password.length > 0) {
             localStorage.setItem(this.userKey, JSON.stringify({ email: userInfo.email, token: "tempToken" }));
             callback({"status":true, "errorMessage":null});
         }

@@ -1,6 +1,6 @@
 <div class="cms-content signin">
     <div class="cms-container">
-        <form class="signin-form">
+        <form class="signin-form" (ngSubmit)="loginUser()">
             <h1>Please sign in below</h1>
             <!-- Email -->
              <mat-form-field>
@@ -10,13 +10,13 @@
 
             <!-- Password -->
             <mat-form-field>
-                <input matInput placeholder="Enter your password" type="password">
+                <input matInput placeholder="Enter your password" type="text" [(ngModel)]="myPassword">
             </mat-form-field>
 
             <div class="btn-row">
-                <div class="btn"><i class="fas fa-unlock-alt"></i><div class="title">Login</div></div>
-            </div>
-            
+                <button class="btn" type="submit"><i class="fas fa-unlock-alt"></i><div class="title">Login</div></button>
+            </div>            
         </form>
+        <p>PWD: {{myPassword}}</p>
     </div>
 </div>
