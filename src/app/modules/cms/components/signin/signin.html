@@ -1,22 +1,22 @@
 <div class="cms-content signin">
     <div class="cms-container">
-        <form class="signin-form" (ngSubmit)="loginUser()">
+        <form class="signin-form" (ngSubmit)="loginUser()" [formGroup]="credetialForm">
             <h1>Please sign in below</h1>
+            <p class="loginError" *ngIf="errorMsg != null">{{errorMsg}}</p>
             <!-- Email -->
              <mat-form-field>
-                <input matInput placeholder="Enter your email" [formControl]="email" required>
-                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                <input matInput placeholder="Enter your email" formControlName="email" required>
+                <mat-error *ngIf="credetialForm.get('email').invalid">{{getErrorMessage()}}</mat-error>
             </mat-form-field>
 
             <!-- Password -->
             <mat-form-field>
-                <input matInput placeholder="Enter your password" type="text" [(ngModel)]="myPassword">
+                <input matInput placeholder="Enter your password" type="text" formControlName="password">
             </mat-form-field>
 
             <div class="btn-row">
                 <button class="btn" type="submit"><i class="fas fa-unlock-alt"></i><div class="title">Login</div></button>
             </div>            
-        </form>
-        <p>PWD: {{myPassword}}</p>
+        </form>        
     </div>
 </div>

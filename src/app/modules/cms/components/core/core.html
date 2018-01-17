@@ -1,7 +1,7 @@
 <div class="cms-body">
     <div class="nav-body">
         <div class="nav-header">
-            <div class="icon-row"><i class="fas fa-wrench"></i><div class="title">Site Builder</div></div>
+            <div class="icon-row"><i class="fas fa-wrench"></i><div class="title">Site Manager</div></div>
         </div>
         <!-- Active User -->
         <div class="nav-container active" *ngIf="userInfo != null">
@@ -15,7 +15,7 @@
             <span class="nav-divider"></span>
             <div class="icon-row row-type-2" *ngIf="isAdmin()"><i class="fas fa-users"></i><div class="title">Admin Console</div></div>
             <div class="icon-row row-type-2"><i class="fas fa-sliders-h"></i><div class="title">User Settings</div></div>
-            <div class="icon-row row-type-2"><i class="fas fa-lock"></i><div class="title">Logout</div></div>
+            <div class="icon-row row-type-2" (click)="logOut()"><i class="fas fa-lock"></i><div class="title">Logout</div></div>
         </div>
         <!-- Inactive User -->
         <div class="nav-container inactive" *ngIf="userInfo == null">

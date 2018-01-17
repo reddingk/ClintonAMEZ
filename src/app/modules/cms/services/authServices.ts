@@ -12,10 +12,10 @@ export class AuthService {
         var currentUser = JSON.parse(localStorage.getItem(this.userKey));
 
         if(currentUser == null || currentUser.email == null){
-            callback(currentUser);
+            callback(null);
         }
         else { 
-            callback(null);
+            callback(userInfo);
         }
     }
 

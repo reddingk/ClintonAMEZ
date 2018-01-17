@@ -11,6 +11,7 @@ import { SignInComponent } from './components/signin/signin';
 import { HomeComponent } from './components/home/home';
 
 import { AuthService } from './services/authServices';
+import { CoreService } from './services/coreServices';
 /* Routes */
 const appRoutes: Routes = [    
     { path:'v-editor', component: CMSCoreComponent}  
@@ -26,8 +27,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes,{ enableTracing: false } )
   ],
   declarations: [CMSCoreComponent, CoreDirective, SignInComponent, HomeComponent],
-  providers: [AuthService],
-  entryComponents: [ SignInComponent, HomeComponent],
+  providers: [AuthService, CoreService],
+  entryComponents: [SignInComponent, HomeComponent],
   exports: []
 })
 export class CMSModule { }

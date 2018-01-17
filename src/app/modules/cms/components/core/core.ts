@@ -1,4 +1,5 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ComponentFactoryResolver, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 /* Service */
 import { AuthService } from '../../services/authServices';
@@ -19,7 +20,7 @@ import { UserInfoModel } from '../../../../datamodels/userInfoModel';
 })
 export class CMSCoreComponent implements OnInit, AfterViewInit {
   @ViewChild(CoreDirective) coreHost: CoreDirective;
-
+  
   public cmsNavItems = {
     "signin":{ "navItem":null, "template":SignInComponent },
     "announcements": { "navItem":new CmsNavModel('announcements', 'fa-bullhorn', 'announcements'), "template":HomeComponent},
@@ -36,19 +37,21 @@ export class CMSCoreComponent implements OnInit, AfterViewInit {
     "selectedTemp":null
   };
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver, private authService: AuthService) { }
+  constructor(private router: Router, private componentFactoryResolver: ComponentFactoryResolver, private authService: AuthService) { }
   ngOnInit() {
+    this.validateUser();
+  } 
+  ngAfterViewInit() { }
+  
+  /* User Validation */
+  public validateUser(){
     var self = this;
     this.authService.validateUser(function(res){
       self.userInfo = res;
       self.buildNavData(res);
       self.setTemplate(self.navData.selectedTemp);
-    });    
-  } 
-  ngAfterViewInit() {
-    //this.setTemplate(this.navData.selectedTemp);
+    });
   }
-  
   /* Set CMS Template */
   public setTemplate(template){
     this.navData.selectedTemp = template;    
@@ -58,7 +61,7 @@ export class CMSCoreComponent implements OnInit, AfterViewInit {
       let componentFactory = this.componentFactoryResolver.resolveComponentFactory(templateComponent);
       let viewContainerRef = this.coreHost.viewContainerRef;
       viewContainerRef.clear();
-      let componentRef = viewContainerRef.createComponent(componentFactory);
+      let componentRef = viewContainerRef.createComponent(componentFactory);      
     }
     catch(ex){ console.log(ex); }
   }
@@ -86,6 +89,16 @@ export class CMSCoreComponent implements OnInit, AfterViewInit {
   /* Check if navitem is active */
   public isActive(name){
     return (this.navData.selectedTemp == name ? 'active' : '');
+  }
+
+  /* Log User Out */
+  public logOut(){
+    if(this.authService.logoutUser()){      
+      this.validateUser();
+    }
+    else {
+      // Error Message unable to logout
+    }
   }
   /*End*/
 }

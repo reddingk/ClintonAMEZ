@@ -30,4 +30,22 @@ body, html {
     transition: 0.5s all ease;
     .title { margin-left: 10px; }
     &:hover { background-color: @color1; color: rgba(255,255,255,1);}
+
+    &.c3 { color: @color3; border-color: @color3; &:hover { background-color: @color3; color: rgba(255,255,255,1);}}
+}
+
+.md-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .md-sz-10 { width: 100%; }
+    .md-sz-9 { width: 90%; }
+    .md-sz-8 { width: 80%; }
+    .md-sz-7 { width: 70%; }
+    .md-sz-6 { width: 60%; }
+    .md-sz-5 { width: 50%; }
+    .md-sz-4 { width: 40%; }
+    .md-sz-3 { width: 30%; }
+    .md-sz-2 { width: 20%; }
+    .md-sz-1 { width: 10%; }    
 }
