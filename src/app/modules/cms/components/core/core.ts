@@ -1,4 +1,5 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ComponentFactoryResolver, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, ComponentFactoryResolver, EventEmitter, NgZone } from '@angular/core';
+import { trigger,state,style,transition,animate,keyframes } from '@angular/animations';
 import { Router } from '@angular/router';
 
 /* Service */
@@ -8,6 +9,8 @@ import { AuthService } from '../../services/authServices';
 import { CoreDirective } from '../../directives/core.directive';
 import { SignInComponent } from '../signin/signin';
 import { HomeComponent } from '../home/home';
+import { SettingsComponent } from '../settings/settings';
+import { AdminComponent } from '../admin/admin';
 
 /* Data Models */
 import { CmsNavModel } from '../../../../datamodels/cmsNavModel';
@@ -16,13 +19,16 @@ import { UserInfoModel } from '../../../../datamodels/userInfoModel';
 @Component({
   selector: 'cms-core',
   templateUrl: './core.html',
-  styleUrls: ['./core.less']
+  styleUrls: ['./core.less'],
+  animations:[]
 })
-export class CMSCoreComponent implements OnInit, AfterViewInit {
+export class CMSCoreComponent implements OnInit {
   @ViewChild(CoreDirective) coreHost: CoreDirective;
   
   public cmsNavItems = {
     "signin":{ "navItem":null, "template":SignInComponent },
+    "settings":{ "navItem":null, "template":SettingsComponent },
+    "admin":{ "navItem":null, "template":AdminComponent },
     "announcements": { "navItem":new CmsNavModel('announcements', 'fa-bullhorn', 'announcements'), "template":HomeComponent},
     "forms": { "navItem":new CmsNavModel('forms', 'fa-clipboard', 'forms'), "template":HomeComponent},
     "calender": { "navItem":new CmsNavModel('calender', 'fa-calendar-alt', 'calender'), "template":HomeComponent},
@@ -37,11 +43,10 @@ export class CMSCoreComponent implements OnInit, AfterViewInit {
     "selectedTemp":null
   };
 
-  constructor(private router: Router, private componentFactoryResolver: ComponentFactoryResolver, private authService: AuthService) { }
+  constructor(private router: Router, public zone: NgZone, private componentFactoryResolver: ComponentFactoryResolver, private authService: AuthService) { }
   ngOnInit() {
     this.validateUser();
   } 
-  ngAfterViewInit() { }
   
   /* User Validation */
   public validateUser(){
@@ -61,7 +66,7 @@ export class CMSCoreComponent implements OnInit, AfterViewInit {
       let componentFactory = this.componentFactoryResolver.resolveComponentFactory(templateComponent);
       let viewContainerRef = this.coreHost.viewContainerRef;
       viewContainerRef.clear();
-      let componentRef = viewContainerRef.createComponent(componentFactory);      
+      let componentRef = viewContainerRef.createComponent(componentFactory);         
     }
     catch(ex){ console.log(ex); }
   }

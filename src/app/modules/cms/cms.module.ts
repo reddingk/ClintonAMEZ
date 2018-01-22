@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AGMaterialModule } from '../../material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 
 import { CoreDirective } from './directives/core.directive';
 import { CMSCoreComponent } from './components/core/core';
 import { SignInComponent } from './components/signin/signin';
 import { HomeComponent } from './components/home/home';
+import { SettingsComponent } from './components/settings/settings';
+import { AdminComponent } from './components/admin/admin';
 
 import { AuthService } from './services/authServices';
 import { CoreService } from './services/coreServices';
@@ -22,13 +25,14 @@ const appRoutes: Routes = [
     CommonModule,    
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     NoopAnimationsModule,
     AGMaterialModule,
     RouterModule.forRoot(appRoutes,{ enableTracing: false } )
   ],
-  declarations: [CMSCoreComponent, CoreDirective, SignInComponent, HomeComponent],
+  declarations: [CMSCoreComponent, CoreDirective, SignInComponent, HomeComponent, SettingsComponent, AdminComponent],
   providers: [AuthService, CoreService],
-  entryComponents: [SignInComponent, HomeComponent],
+  entryComponents: [SignInComponent, HomeComponent, SettingsComponent, AdminComponent],
   exports: []
 })
 export class CMSModule { }

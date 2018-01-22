@@ -1,0 +1,78 @@
+<div class="cms-content inner-page settings">
+    <div class="cms-container">        
+        <h1 class="header-message"><i class="fas fa-cogs"></i> <span>User Settings</span></h1>                  
+
+        <div class="section user-form">  
+            <form class="settings-form" [formGroup]="settingsForm">
+                <div class="md-row form-row">
+                    <!-- First Name -->
+                    <div class="form-item md-sz-3">
+                        <mat-form-field>
+                            <input matInput placeholder="First Name" type="text" formControlName="firstname">
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="form-item md-sz-4">
+                        <mat-form-field>
+                            <input matInput placeholder="Last Name" type="text" formControlName="lastname">
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Title -->
+                    <div class="form-item md-sz-7">
+                        <mat-form-field>
+                            <input matInput placeholder="Title" type="text" formControlName="title">
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-item md-sz-7">
+                        <mat-form-field>
+                            <input matInput placeholder="Email" type="text" formControlName="email">
+                            <mat-error *ngIf="settingsForm.get('email').invalid">{{getErrorMessage('email')}}</mat-error>
+                        </mat-form-field>
+                    </div>                   
+
+                    <!-- Password Panel -->
+                    <div class="form-item md-sz-7">
+                        <mat-expansion-panel >
+                            <mat-expansion-panel-header>
+                                <mat-panel-title><i class="fas fa-key"></i> <span>Change Password</span></mat-panel-title>
+                                <mat-panel-description>Change my account password</mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <div class="pwd-field">
+                                <div class="form-item md-sz-3">
+                                    <mat-form-field>
+                                        <input matInput placeholder="Password" type="password" [value]="updatePassword.pwd1">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-item md-sz-3">
+                                    <mat-form-field>
+                                        <input matInput placeholder="Verify Password" type="password" [value]="updatePassword.pwd2">
+                                    </mat-form-field>
+                                </div>
+                                <div class="btn-row md-sz-4">
+                                    <button class="btn c3-flip"><i class="fas fa-unlock-alt"></i><div class="title">Update Password</div></button>
+                                </div> 
+                            </div>
+                        </mat-expansion-panel>
+                    </div>
+
+                    <!-- Access pills -->
+                    <div class="form-item md-sz-7">
+                        <h2>Feature Access</h2>
+                        <mat-chip-list>
+                            <mat-chip *ngFor="let access of accessPills()">{{access}}</mat-chip>
+                        </mat-chip-list>
+                    </div>
+
+                    <div class="btn-row md-sz-10">
+                        <button class="btn c3" (click)="reloadPage()"><i class="fas fa-ban"></i><div class="title">Cancel</div></button>
+                        <button class="btn c3" type="submit"><i class="fas fa-unlock-alt"></i><div class="title">Update</div></button>
+                    </div> 
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

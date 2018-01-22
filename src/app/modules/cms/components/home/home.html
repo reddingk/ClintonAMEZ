@@ -6,51 +6,8 @@
                 components for the Clinton A.M.E. Zion website.  For any issues please site administrator {{ siteadmin }}</p>
         </div>
 
-        <div class="section message-board">
-            <h2 class="section-title">Message Board</h2>
-            <p>Add Messages for the other site manager users to view</p>
-            <div class="message-container">
-                <div class="new-message">
-                    <form class="message-create" [formGroup]="newMessage" (ngSubmit)="addNote()">
-                        <div class="md-row">
-                            <!-- Subject -->
-                            <mat-form-field class="md-sz-10">
-                                <input matInput placeholder="Subject" type="text" formControlName="subject" required>
-                            </mat-form-field>
-                            <!-- Color -->
-                            <mat-form-field class="md-sz-10">                                
-                                <mat-select placeholder="Color" formControlName="color">
-                                    <mat-option *ngFor="let color of messageColors" [value]="color">{{color}}</mat-option>
-                                </mat-select>
-                            </mat-form-field>                            
-                            <!-- Message -->
-                            <mat-form-field class="md-sz-10">
-                                <textarea  matInput placeholder="Message" type="text" formControlName="message" required></textarea>
-                            </mat-form-field>
-                        </div>
-                        <div class="btn-row">
-                            <button class="btn c3" type="submit"><i class="fas fa-plus-circle"></i><div class="title">Add Message</div></button>
-                        </div>  
-                    </form>
-                </div>
-                <div class="all-messages">
-                    <!-- No Messages -->
-                    <div class="messages-section no-message" *ngIf="allMessages == null || allMessages.length == 0">
-                        <div class="messages-container">
-                            <h3>Sorry there are no messages at this time.</h3>
-                        </div>
-                    </div>
-
-                    <!-- Message List -->
-                    <div class="messages-section list" *ngIf="allMessages.length > 0">
-                        <div class="messages-container list" *ngFor="let note of allMessages" [ngClass]="note.color">
-                            <div class="note-subject">{{note.subject}}</div>
-                            <div class="note-message">{{note.message}}</div>
-                            <div class="note-author">{{note.author}}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="section main-img">            
+            <div class="img-container"><img src="assets/images/builder1.png"></div>
+        </div>    
     </div>
 </div>

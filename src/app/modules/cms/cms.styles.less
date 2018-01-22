@@ -1,0 +1,28 @@
+@import (reference) "../variables.less";
+
+.inner-page {
+    padding: 0px 20px;
+    .cms-container {
+        .header-message { text-align: center; color: @color3; }
+
+        .form-row {
+            padding: 10px;
+            justify-content: center;            
+            .form-item {
+                padding: 0px 5px 30px;
+                mat-form-field {  width: 100%; }
+                mat-chip { text-transform: capitalize;}                
+            }
+            .btn-row { 
+                text-align: center;
+                .btn { 
+                    &+.btn { margin-left: 20px;}
+                }
+            }
+            .pwd-field { 
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
