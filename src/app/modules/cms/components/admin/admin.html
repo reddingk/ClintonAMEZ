@@ -5,7 +5,8 @@
             <div class="section admin-form">  
                 <div class="user-search">
                     <mat-form-field>
-                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="User Search">
+                        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="User Search">
+                        <span matPrefix><i class="fas fa-search"></i>&nbsp;</span>
                     </mat-form-field>
                 </div>
 

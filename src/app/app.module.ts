@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AGMaterialModule } from './material';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ const routes: Routes = [];
     ReactiveFormsModule,
     HttpClientModule,
     AGMaterialModule,
+    ToastrModule.forRoot(),
     RouterModule.forRoot(routes),
     CMSModule,
     SiteModule
