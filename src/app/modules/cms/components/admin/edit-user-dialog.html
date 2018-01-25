@@ -1,0 +1,87 @@
+<div class="dialog-container edit-user">    
+    <h1><i class="far fa-edit"></i>  <span>{{ (data.new == false? 'Edit' : 'New')}} User</span></h1>
+    <form class="edit-container" [formGroup]="updateForm">
+        <div class="md-row form-row">
+
+            <!-- First Name -->
+            <div class="form-item md-sz-4">
+                <mat-form-field>
+                    <input matInput placeholder="First Name" type="text" formControlName="firstname">
+                </mat-form-field>
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-item md-sz-4">
+                <mat-form-field>
+                    <input matInput placeholder="Last Name" type="text" formControlName="lastname">
+                </mat-form-field>
+            </div>
+
+            <!-- Title -->
+            <div class="form-item md-sz-6">
+                <mat-form-field>
+                    <input matInput placeholder="Title" type="text" formControlName="title">
+                </mat-form-field>
+            </div>
+
+            <!-- Admin -->
+            <div class="form-item toggle md-sz-2">
+                <mat-slide-toggle [checked]="updateUser.adminStatus">Administrator</mat-slide-toggle>
+            </div>
+
+            <!-- Email -->
+            <div class="form-item md-sz-8">
+                <mat-form-field>
+                    <input matInput placeholder="Email" type="text" formControlName="email">
+                    <mat-error *ngIf="updateForm.get('email').invalid">{{getErrorMessage('email')}}</mat-error>
+                </mat-form-field>
+            </div>
+
+            <!-- Password Panel -->
+            <div class="form-item md-sz-8">
+                <!-- Existing User -->
+                <mat-expansion-panel *ngIf="data.new == false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title><span>Change Password</span></mat-panel-title>
+                        <mat-panel-description>Change user password</mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <form class="pwd-field" [formGroup]="pwdForm" (ngSubmit)="updatePassword()">
+                        <div class="form-item md-sz-4">
+                            <mat-form-field>
+                                <input matInput placeholder="Password" type="password" formControlName="pwd1">
+                            </mat-form-field>
+                        </div>
+                        <div class="form-item md-sz-4">
+                            <mat-form-field>
+                                <input matInput placeholder="Verify Password" type="password" formControlName="pwd2">
+                            </mat-form-field>
+                        </div>
+                        <div class="btn-row md-sz-3">
+                            <button class="btn c3-flip" type="submit"><i class="fas fa-unlock-alt"></i><div class="title">Update Password</div></button>
+                        </div> 
+                    </form>
+                </mat-expansion-panel>
+
+                <!-- New User -->
+                <mat-form-field *ngIf="data.new == true">
+                    <input matInput placeholder="Password" type="text" formControlName="password">
+                </mat-form-field>
+            </div>
+
+            <!-- Features -->
+            <div class="form-item md-sz-8">
+                <h2>Features</h2>
+                <div class="feature-container">
+                    <div class="feature-item" *ngFor="let feature of featureList">                        
+                        <mat-slide-toggle [checked]="updateUser.permissions[feature]">{{feature}}</mat-slide-toggle>
+                    </div>
+                </div>
+            </div>
+            <!-- Buttons -->
+            <div class="btn-row md-sz-10">
+                <button class="btn c3" (click)="onNoClick()"><i class="fas fa-ban"></i><div class="title">Cancel</div></button>
+                <button class="btn c3" type="submit"><i class="far fa-edit"></i><div class="title">Update</div></button>
+            </div> 
+        </div>
+    </form>       
+</div>

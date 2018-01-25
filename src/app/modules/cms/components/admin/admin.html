@@ -8,6 +8,10 @@
                         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="User Search">
                         <span matPrefix><i class="fas fa-search"></i>&nbsp;</span>
                     </mat-form-field>
+
+                    <div class="btn-section">
+                        <button class="btn c3-flip" (click)="openDialog(null, true)"><i class="fas fa-user-plus"></i><div class="title">New User</div></button>
+                    </div>
                 </div>
 
                 <mat-table #userTable [dataSource]="userDataStore">
@@ -32,6 +36,12 @@
                     <ng-container matColumnDef="admin">
                         <mat-header-cell *matHeaderCellDef>Admin?</mat-header-cell>
                         <mat-cell *matCellDef="let element">{{(element.adminStatus ? 'Yes': 'No')}}</mat-cell>
+                    </ng-container>
+
+                    <!-- Update -->
+                    <ng-container matColumnDef="update">
+                        <mat-header-cell *matHeaderCellDef>Update</mat-header-cell>
+                        <mat-cell *matCellDef="let element"><div class="edit-btn" (click)="openDialog(element, false)"><i class="fas fa-edit"></i></div></mat-cell>
                     </ng-container>
 
                     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

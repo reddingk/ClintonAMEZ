@@ -1,6 +1,7 @@
 @import (reference) "../../../variables.less";
 
 .admin {
+    font-family: 'Comfortaa', cursive;
     padding: 0px 50px !important;
     .admin-form {
         margin-top: 30px;        
@@ -8,8 +9,51 @@
         .user-search{ 
             min-height: 64px;
             padding: 8px 24px 0;  
-            background: rgba(255,255,255,1);          
+            background: rgba(255,255,255,1); 
+            display: flex; 
+            overflow: hidden;        
             .mat-form-field { width: 100%; }
+            .btn-section { width: 130px; padding: 12px 0px 0px 20px; }
+        }
+
+        .edit-btn { 
+            cursor: pointer;
+            transition: 0.5s all ease;
+            &:hover { color: @color3; }
         }
     }
+}
+
+.edit-user {
+    font-family: 'Comfortaa', cursive;
+    h1 { text-align: center; color: @color3; }
+    .edit-container {
+        min-width: 50%;
+        .md-row { 
+            justify-content: center;
+            .form-item { 
+                padding: 0px 5px; 
+                h2 { margin: 30px 5px 5px; }
+
+                &.toggle { padding-top: 15px;}
+                mat-form-field { width:  100%; }
+                mat-expansion-panel {
+                    background-color: rgba(100,100,100,0.1);
+                    .pwd-field { display: flex; }
+                }
+                .feature-container {
+                    display: flex;
+                    padding: 10px 0px;
+                    .feature-item { 
+                        padding: 10px;
+                        border: 1px solid rgba(0,0,0,0.1);
+                        display: flex; 
+                        text-transform: capitalize;
+                        &+.feature-item { margin-left: 10px; }
+                    }
+                }
+            }
+            .btn-row { text-align: center; .btn { &+.btn { margin-left: 10px; }}}
+        }
+    }    
 }

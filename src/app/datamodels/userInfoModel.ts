@@ -6,7 +6,7 @@ export class UserInfoModel {
     public password: string; 
     public adminStatus: boolean;  
     public permissions: any; // Dictionary ex. {'pagename':true, 'pagename2':false}
-
+    
     constructor(myFirstname, myLastname, myTitle, myEmail, myAdmin, myPermissions){  
         this.firstname = myFirstname;
         this.lastname = myLastname;
