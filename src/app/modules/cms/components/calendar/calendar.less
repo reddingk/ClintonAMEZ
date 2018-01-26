@@ -1,1 +1,82 @@
 @import (reference) "../../../variables.less";
+
+.calender{
+    .cms-container{
+        .calendar-container{
+            .full-container {
+                display: flex;
+                .filter-section { 
+                    width: 200px; 
+                    border: 2px solid;
+                    .color3(border-color, 0.1);
+                    padding: 10px;
+
+                    .btn-row {
+                        text-align: center;
+                        margin-top: 0px;
+                        .btn { font-size: .8rem;}
+                    }
+                    .filter-container {
+                        padding: 5px;
+                        .filter-item { 
+                            background: rgba(100,100,100,1);
+                            color: rgba(255,255,255,1);
+                            padding: 3px 10px;                            
+                            border-radius: 50px;              
+                            display: flex;
+                            justify-content: space-between; 
+                            font-size: .8rem;
+                            opacity: 0.5;
+                            text-decoration: line-through;
+                            cursor: pointer;
+
+                            .view-icon { visibility: hidden;}            
+                            &:hover { .view-icon { visibility: visible;}}
+                            &.active { opacity: 1; text-decoration:none; }
+                            &+.filter-item{ margin-top: 5px; }
+                        }
+                    }
+                }
+                .calendar-container-section {
+                    width: 100%;
+                    border: 2px solid;
+                    .color3(border-color, 0.1);
+                    border-left: 0;
+                    padding: 5px;
+                    .calendar-header {
+                        padding: 10px;
+                        .calendar-ctrls {
+                            display: inline-flex;
+                            border: 2px solid @color3;
+                            border-radius: 5px;
+                            .calendar-ctrl-btn {
+                                text-align: center;
+                                padding: 5px;
+                                font-weight: bold;
+                                cursor: pointer;
+                                transition: 0.5s all ease;
+                                opacity: 0.7;
+                                &:hover { opacity: 1;}
+                                
+                                &+.calendar-ctrl-btn { border-left: 2px solid @color3;}
+                                &.left, &.right{ color: rgba(255,255,255,1); .color3(background, 1); }
+                                &.today { padding: 5px 15px; &:hover { background: rgba(200,200,200,0.5);} }
+                                &.view-change { 
+                                    &:hover:not(.active){ .color3(background, 0.4);}
+                                }
+                                &.active { background: @color3;}
+                            }
+
+                            &.view { float: right; }
+                        }
+
+                        .calendar-title { 
+                            display: inline-block; 
+                            margin-left: 20px;                    
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

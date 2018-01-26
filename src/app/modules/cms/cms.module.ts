@@ -13,7 +13,7 @@ import { SignInComponent } from './components/signin/signin';
 import { HomeComponent } from './components/home/home';
 import { SettingsComponent } from './components/settings/settings';
 import { AdminComponent, EditUserDialog } from './components/admin/admin';
-import { CalendarComponent } from './components/calendar/calendar';
+import { CalendarComponent, EventDialog } from './components/calendar/calendar';
 
 import { AuthService } from './services/authServices';
 import { CoreService } from './services/coreServices';
@@ -33,9 +33,9 @@ const appRoutes: Routes = [
     CalendarModule.forRoot(),
     RouterModule.forRoot(appRoutes,{ enableTracing: false } )
   ],
-  declarations: [CMSCoreComponent, CoreDirective, SignInComponent, HomeComponent, SettingsComponent, AdminComponent, EditUserDialog, CalendarComponent],
+  declarations: [CMSCoreComponent, CoreDirective, SignInComponent, HomeComponent, SettingsComponent, AdminComponent, EditUserDialog, CalendarComponent, EventDialog],
   providers: [AuthService, CoreService],
-  entryComponents: [SignInComponent, HomeComponent, SettingsComponent, AdminComponent, EditUserDialog, CalendarComponent],
+  entryComponents: [SignInComponent, HomeComponent, SettingsComponent, AdminComponent, EditUserDialog, CalendarComponent, EventDialog],
   exports: []
 })
 export class CMSModule { }
