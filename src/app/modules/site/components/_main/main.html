@@ -1,11 +1,26 @@
-<h1>Header Nav</h1>
-<nav>
-    <a routerLink="" routerLinkActive="active" >Home</a>
-    <a routerLink="about-us" routerLinkActive="active" >About Us</a>
-    <a routerLink="/v-editor" routerLinkActive="active" >Editor</a>
-</nav>
-<hr />
+<mat-sidenav-container class="clinton-site site-container">
+    <mat-sidenav #sidenav mode="side" class="sideNav-container" align="end" fixedInViewport="true" mode="over" disableClose>
+        <div class="side-header">
+            <div class="nav-link"><a (click)="sidenav.toggle()"><i class="fas fa-times-circle"></i></a></div>
+        </div>
+        <div class="side-body">
+            <div class="nav-link" *ngFor="let item of navitems"><a [href]="item.page">{{item.title}}</a></div>
+        </div>        
+    </mat-sidenav>
 
-<div class="body-container">                
-    <router-outlet></router-outlet>
-</div>
+    <mat-sidenav-content>
+        <section class="main-content">
+            <!-- Header -->
+            <my-header (toggleEvent)="sidenav.toggle()" [navitems]="navitems"></my-header>
+        
+            <!-- Body -->
+            <div class="body-container">                
+                <router-outlet></router-outlet>
+            </div>
+            <!-- Footer -->
+            <hr />
+            <a routerLink="/v-editor" routerLinkActive="active" >Editor</a>
+        
+        </section>
+    </mat-sidenav-content>
+</mat-sidenav-container>

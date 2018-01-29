@@ -1,0 +1,35 @@
+<div class="nav-header fixed-header" #mceHeader>
+    <div class="top-nav">
+        <div class="nav-container right-align">            
+            <div class="txt-btn"><i class="fas fa-dollar-sign"></i> <span>Give Online</span></div>
+            <!-- Divider -->
+            <div class="divider"></div>
+            <!-- Social Buttons -->
+            <div class="social-btn facebook" data-fa-transform="shrink-8"><i class="fab fa-facebook-f fa-fw"></i></div>
+            <div class="social-btn twitter" data-fa-transform="shrink-8"><i class="fab fa-twitter fa-fw"></i></div>
+            <div class="social-btn instagram" data-fa-transform="shrink-8"><i class="fab fa-instagram fa-fw"></i></div>
+        </div>
+    </div>
+    <div class="nav-container bottom-nav">
+        <!-- Logo -->
+        <div class="navbar-header">
+            <a href="/" class="navbar-brand">
+                <img src="assets/images/logos/ame_zion_logo.png" class="logo" alt="A.M.E. Zion Logo">
+                <div class="title-text">
+                    <div class="lrg-title">Clinton</div>
+                    <div class="sm-title">A.M.E. Zion</div>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Full Menu -->
+        <div class="navbar-items full">
+            <div class="nav-link" *ngFor="let item of navitems"><a [href]="item.page">{{item.title}}</a></div>        
+        </div>
+
+        <!-- Sidebar Menu -->
+        <div class="navbar-items sidebar">            
+            <div class="nav-link"><a (click)="toggleSideNav()"><i class="fas fa-bars"></i></a></div>
+        </div>
+    </div>
+</div>

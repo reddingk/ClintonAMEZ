@@ -6,8 +6,8 @@ import { ToastrService } from 'ngx-toastr';
 import { UserInfoModel } from '../../../../datamodels/userInfoModel';
 
 /* Service */
-import { AuthService } from '../../services/authServices';
-import { CoreService } from '../../services/coreServices';
+import { AuthService } from '../../../../services/authServices';
+import { CoreService } from '../../../../services/coreServices';
 
 @Component({
   selector: 'cms-settings',

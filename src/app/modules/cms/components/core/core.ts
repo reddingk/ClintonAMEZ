@@ -3,7 +3,7 @@ import { trigger,state,style,transition,animate,keyframes } from '@angular/anima
 import { Router } from '@angular/router';
 
 /* Service */
-import { AuthService } from '../../services/authServices';
+import { AuthService } from '../../../../services/authServices';
 
 /* Components */
 import { CoreDirective } from '../../directives/core.directive';
@@ -105,6 +105,10 @@ export class CMSCoreComponent implements OnInit {
     else {
       // Error Message unable to logout
     }
+  }
+
+  public test(){
+    console.log("this is a test");
   }
   /*End*/
 }

@@ -11,8 +11,8 @@ import { ToastrService } from 'ngx-toastr';
 import { CalFilterModel } from '../../../../datamodels/calendarFilterModel';
 
 /* Service */
-import { AuthService } from '../../services/authServices';
-import { CoreService } from '../../services/coreServices';
+import { AuthService } from '../../../../services/authServices';
+import { CoreService } from '../../../../services/coreServices';
 
 const colors: any = {
   red: {

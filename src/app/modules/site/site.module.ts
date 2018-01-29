@@ -2,12 +2,16 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { AGMaterialModule } from '../../material';
 import { RouterModule, Routes } from '@angular/router';
+import { NgxCarouselModule } from 'ngx-carousel';
+import 'hammerjs';
 
 /* Site Components */
 import { MainComponent} from './components/_main/main';
 import { HomeComponent } from './components/home/home';
 import { AboutUsComponent } from './components/aboutus/aboutus';
+import { HeaderComponent } from './components/templates/header';
 
 
 /* Routes */
@@ -27,10 +31,12 @@ const appRoutes: Routes = [
   imports: [
     CommonModule,    
     FormsModule,
+    AGMaterialModule,
+    NgxCarouselModule,
     NoopAnimationsModule,
     RouterModule.forRoot(appRoutes,{ enableTracing: false } )
   ],
-  declarations: [MainComponent, HomeComponent, AboutUsComponent],
+  declarations: [MainComponent, HomeComponent, AboutUsComponent, HeaderComponent],
   exports: []
 })
 export class SiteModule { }

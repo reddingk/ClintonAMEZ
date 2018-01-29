@@ -26,7 +26,7 @@ const routes: Routes = [];
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AGMaterialModule,
+    AGMaterialModule,    
     CalendarModule.forRoot(),
     ToastrModule.forRoot(),
     RouterModule.forRoot(routes),

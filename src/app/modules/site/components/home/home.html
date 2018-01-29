@@ -1,1 +1,31 @@
-<h1>Home Test</h1>
+<div class="site-page home">
+    <section class="main-carousel">
+        <ngx-carousel [inputs]="mainCarousel" (carouselLoad)="loadCarousel('home', $event)" class="clinton-carousels home-carousel">
+            
+            <ngx-item *ngFor="let item of homeCards" NgxCarouselItem>
+                <div class="carousel-page" [ngClass]="getPageType(item.type)" [ngSwitch]="item.type"> 
+                    <!-- Full Video -->                   
+                    <div class="carousel-card" *ngSwitchCase="'full-video'">
+                        <div class="video-container">
+                            <video class="bg-video" autoplay loop><source src="{{item.media}}"></video>
+                        </div>
+                    </div>    
+                    <!-- Card Video -->                    
+                    <div class="carousel-card" *ngSwitchCase="'card-video'"></div>
+
+                    <!-- Card Image -->
+                    <div class="carousel-card" *ngSwitchDefault>                        
+                        <div class="img-container"><img src="{{item.media}}" class="carousel-card-img" alt=""></div>
+                        <div class="card-content">
+                            <div class="content-title">{{item.title}}</div>
+                            <div *ngFor="let line of item.lines" [ngClass]="['content-line', line.size, isBold(line.bold)]" [ngStyle]="{'color':line.color}">{{line.text}}</div>
+                        </div>
+                    </div>                    
+                </div>
+            </ngx-item>            
+
+            <div NgxCarouselPrev class="carousel-ctrl prev"><i class="fas fa-chevron-left"></i></div>
+            <div NgxCarouselNext class="carousel-ctrl next"><i class="fas fa-chevron-right"></i></div>
+        </ngx-carousel>
+    </section>
+</div>

@@ -15,8 +15,8 @@ import { SettingsComponent } from './components/settings/settings';
 import { AdminComponent, EditUserDialog } from './components/admin/admin';
 import { CalendarComponent, EventDialog } from './components/calendar/calendar';
 
-import { AuthService } from './services/authServices';
-import { CoreService } from './services/coreServices';
+import { AuthService } from '../../services/authServices';
+import { CoreService } from '../../services/coreServices';
 /* Routes */
 const appRoutes: Routes = [    
     { path:'v-editor', component: CMSCoreComponent}  

@@ -3,7 +3,7 @@ import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 /* Service */
-import { AuthService } from '../../services/authServices';
+import { AuthService } from '../../../../services/authServices';
 
 @Component({
   selector: 'cms-signin',

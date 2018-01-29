@@ -64,3 +64,43 @@ body, html {
     .md-sz-2 { width: 20%; }
     .md-sz-1 { width: 10%; }    
 }
+
+/* Carousel*/
+ngx-carousel{
+    height: 100%;
+    z-index: 1;
+    position: relative;
+    .ngxcarousel {
+        height: 93%;
+        position: relative;
+        .ngxcarousel-inner {
+            height: 100%;            
+            .ngxcarousel-items {
+                height: 100%;                
+                .item { 
+                    height: 100%;                    
+                }
+            }
+        }
+        .carousel-ctrl {
+            position: absolute;
+            top: 50%;
+            color: rgba(0,0,0,0.5);
+            transform: translateY(-50%);
+            font-size: 50px;
+            transition: 0.5s all ease;
+            cursor: pointer; 
+            &.prev { left: 10px;}
+            &.next { right: 10px;}   
+            &:hover { color: rgba(0,0,0,1);}
+            @media @mobile-device { display: none !important; }
+        }
+    }
+
+    .ngxcarouselPoint {
+        li { 
+            background: rgba(200,200,200,0.2) !important;
+            &.active { background: rgba(100,100,100,0.5) !important; }
+        }
+    }
+}

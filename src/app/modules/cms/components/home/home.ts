@@ -4,8 +4,8 @@ import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 /* Data Models */
 
 /* Service */
-import { AuthService } from '../../services/authServices';
-import { CoreService } from '../../services/coreServices';
+import { AuthService } from '../../../../services/authServices';
+import { CoreService } from '../../../../services/coreServices';
 
 @Component({
   selector: 'cms-home',
