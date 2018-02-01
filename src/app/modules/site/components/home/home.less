@@ -66,4 +66,36 @@
             }               
         }
     }
+
+    .getConnected {
+        padding: 20px 5%;
+        text-align: center;
+        h1 { font-size: 3rem;}
+        p { font-size: 1.2rem;}
+        .cards-holder {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            padding: 10px 10%;
+            .card {
+                padding: 20px;
+                width: 33.3%;
+                .card-container {
+                    background: rgba( 100,100,100,0.5);
+                    height: 125px;
+                    color:rgba(255,255,255,1);
+                    position: relative;
+                    .card-title { 
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        position: absolute;
+                        width: 100%;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
 }
