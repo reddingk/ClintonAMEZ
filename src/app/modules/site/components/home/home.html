@@ -7,7 +7,7 @@
                     <!-- Full Video -->                   
                     <div class="carousel-card" *ngSwitchCase="'full-video'">
                         <div class="video-container">
-                            <video class="bg-video" autoplay loop><source src="{{item.media}}"></video>
+                            <video class="bg-video" autoplay loop muted><source src="{{item.media}}"></video>
                         </div>
                     </div>    
                     <!-- Card Video -->                    
@@ -53,5 +53,48 @@
     </section>
 
     <!-- Ministries Section -->
-    <section></section>
+    <section class="ourMinistries">
+        <div class="text-content">
+            <h1>Ministries</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        
+        <div class="ministry-container" id="ministryList">
+            <div class="ministry-full-container">
+                <div class="ministry-card-container" *ngFor="let card of ministryList">
+                    <div class="ministry-card">
+                        <img src="{{card.defaultMedia}}" class="card-img">
+                        <div class="card-title">{{card.title}}</div>
+                    </div>
+                </div>
+
+                <!-- All Ministries Card -->
+                <div class="ministry-card-container all-ministries">
+                    <div class="ministry-card">                        
+                        <div class="card-title">View All Of Our Ministries</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Controllers -->
+        <div class="scroll-ctrl prev" (mouseenter)="scrollActivate(-1, 'ministryList')" (mouseleave)="scrollDeactivate()"><i class="nav fas fa-chevron-left"></i></div>
+        <div class="scroll-ctrl next" (mouseenter)="scrollActivate(1, 'ministryList')" (mouseleave)="scrollDeactivate()"><i class="nav fas fa-chevron-right"></i></div>
+    </section>
+
+    <!-- Welcome From Our Pastor -->
+    <section class="welcome">
+        <div class="text-content">
+            <h1>Welcome From Our Pastor</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <div class="tablet-cover">
+            <span class="half-tablet content">
+                <div class="content-area"></div>
+            </span>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <section class="divider"><div class="spacer1"></div></section>
 </div>

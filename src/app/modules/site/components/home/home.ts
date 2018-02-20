@@ -5,6 +5,7 @@ import { NgxCarousel } from 'ngx-carousel';
 /* Data Models */
 import { LineTypeModel } from '../../../../datamodels/lineTypeModel';
 import { AnnouncementModel } from '../../../../datamodels/announcementModel';
+import { MinistryModel } from '../../../../datamodels/ministryModel';
 
 /* Services */
 import { CoreService } from '../../../../services/coreServices';
@@ -17,6 +18,10 @@ import { CoreService } from '../../../../services/coreServices';
 export class HomeComponent implements OnInit {
   public mainCarousel: NgxCarousel;
   public homeCards: AnnouncementModel[];
+  public ministryList: MinistryModel[];
+  public intervalId = null;
+  public mobileCheck = new RegExp('Android|webOS|iPhone|iPad|' + 'BlackBerry|Windows Phone|'  + 'Opera Mini|IEMobile|Mobile' , 'i');
+  
   constructor(private coreService: CoreService) { }
 
   ngOnInit() { 
@@ -27,6 +32,7 @@ export class HomeComponent implements OnInit {
       load: 2, touch: true, loop: true, custom: 'banner'
     }
     this.loadAnnouncements();
+    this.loadMinistries();
   }
   
   public loadCarousel(loadType:string, event: Event) { }
@@ -40,6 +46,15 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  public loadMinistries(){
+    var self = this;
+    this.coreService.getMinistries(function(res){
+      if(!res.errorMessage){
+        self.ministryList = res.results;
+      }
+    });
+  }
+
   public getPageType(type){
     var cardType = type.split("-");
     return cardType[0];
@@ -47,5 +62,23 @@ export class HomeComponent implements OnInit {
 
   public isBold(bold){
     return(bold == true? 'bold': '');
+  }
+
+  public scrollActivate(direction:number , container: string){
+    var containerObj = document.getElementById(container);
+    let scrollSpace: number = 15;
+
+    if(containerObj != null && !this.mobileCheck.test(navigator.userAgent)){
+      clearInterval(this.intervalId);
+
+      this.intervalId = setInterval(function() {
+        let scrollLoc: number = containerObj.scrollLeft + (scrollSpace * direction);
+        containerObj.scrollLeft = scrollLoc;
+      }, 25);
+    }
+  }
+
+  public scrollDeactivate(){
+    clearInterval(this.intervalId);
   }
 }

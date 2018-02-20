@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { UserInfoModel } from '../datamodels/userInfoModel';
 import { AnnouncementModel } from '../datamodels/announcementModel';
 import { LineTypeModel } from '../datamodels/lineTypeModel';
+import { MinistryModel } from '../datamodels/ministryModel';
 
 import { startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours } from 'date-fns';
 import { CalendarEvent } from 'angular-calendar';
@@ -95,5 +96,22 @@ export class CoreService {
         ];
 
         callback({"errorMessage":null,"results":retList});
+    }
+
+    getMinistries(callback){
+        var tmpMins: MinistryModel[] = [
+            new MinistryModel("Lay Council","assets/images/tmpMedia/c1.jpg"),
+            new MinistryModel("Admin & Tech","assets/images/tmpMedia/c5.jpg"),
+            new MinistryModel("Christian Education","assets/images/tmpMedia/c6.jpg"),
+            new MinistryModel("Men of Varick","assets/images/tmpMedia/c4.jpg"),
+            new MinistryModel("Faith & Social Justice Ministry","assets/images/tmpMedia/c3.jpg"),
+            new MinistryModel("WHOMS","assets/images/tmpMedia/c2.jpg"),
+            new MinistryModel("Women of Zion","assets/images/tmpMedia/c7.jpg"),
+            new MinistryModel("Senior Ministry (Gems)","assets/images/tmpMedia/c6.jpg"),
+            new MinistryModel("Young Adult Missionary Society","assets/images/tmpMedia/c9.jpg"),
+            new MinistryModel("Bags of Hope","assets/images/tmpMedia/c6.jpg")
+        ];
+
+        callback({"errorMessage":null,"results":tmpMins});
     }
 }
