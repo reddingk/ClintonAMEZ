@@ -1,0 +1,45 @@
+@import (reference) "../../../variables.less";
+
+.about-us {
+    position: relative;
+
+    .body-section {        
+        position: relative;  
+        h1 { margin: 0px 0px 20px; font-size: 3rem; text-align: center;}
+        &.full-txt {padding: 40px 5%;}
+        &.img-txt {
+            display: flex;
+            &.c1 { background: rgba(150,150,150,1); color: rgba(255,255,255,1);}
+            .img-content { 
+                position: relative;
+                overflow: hidden;
+                flex-grow: 0;
+                flex-shrink: 0;
+                width: 400px;
+                display: inline-block;
+                img { height: 100%;}
+            }
+            .txt-content { 
+                padding: 40px;
+                display: inline-block;
+                h1{ font-weight: initial; span { font-weight: bold;}}
+            }
+        }
+        &.notched-top { 
+            position: relative;        
+            &:before {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                top: -@notchSize;
+                left: 50%;
+                transform: translateX(-50%);
+                height: @notchSize;
+                width: @notchSize *2;
+                background-color: rgba(250,250,250,1);
+                border-top-left-radius: @notchSize * 2;
+                border-top-right-radius: @notchSize * 2;
+            }            
+        }
+    }
+}

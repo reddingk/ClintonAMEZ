@@ -24,12 +24,23 @@
         
         <!-- Full Menu -->
         <div class="navbar-items full">
-            <div class="nav-link" *ngFor="let item of navitems"><a [href]="item.page">{{item.title}}</a></div>        
+            <div class="nav-link" *ngFor="let item of navitems">
+                <a [href]="item.page"(mouseenter)="showAdditionalMenu(item.subPages)">{{item.title}}</a>
+            </div>        
         </div>
 
         <!-- Sidebar Menu -->
         <div class="navbar-items sidebar">            
             <div class="nav-link"><a (click)="toggleSideNav()"><i class="fas fa-bars"></i></a></div>
+        </div>
+    </div>
+
+    <!-- Additional Menu -->
+    <div class="additionalMenu" *ngIf="additonalMenu.display == true" (mouseleave)="hideAdditionalMenu()">
+        <div class="additionalContainer">
+            <div class="add-nav-link" *ngFor="let item of additonalMenu.items">
+                <a [href]="item.page">{{item.title}}</a>
+            </div>
         </div>
     </div>
 </div>

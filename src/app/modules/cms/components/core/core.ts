@@ -30,11 +30,11 @@ export class CMSCoreComponent implements OnInit {
     "signin":{ "navItem":null, "template":SignInComponent },
     "settings":{ "navItem":null, "template":SettingsComponent },
     "admin":{ "navItem":null, "template":AdminComponent },
-    "announcements": { "navItem":new CmsNavModel('announcements', 'fa-bullhorn', 'announcements'), "template":HomeComponent},
-    "ministries": { "navItem":new CmsNavModel('ministries', 'fa-child', 'ministries'), "template":HomeComponent},    
-    "gallery": { "navItem":new CmsNavModel('gallery', 'fa-images', 'gallery'), "template":HomeComponent},
-    "calender": { "navItem":new CmsNavModel('calender', 'fa-calendar-alt', 'calender'), "template":CalendarComponent},    
-    "forms": { "navItem":new CmsNavModel('forms', 'fa-clipboard', 'forms'), "template":HomeComponent}    
+    "announcements": { "navItem":new CmsNavModel('announcements', 'fa-bullhorn', 'announcements', null), "template":HomeComponent},
+    "ministries": { "navItem":new CmsNavModel('ministries', 'fa-child', 'ministries', null), "template":HomeComponent},    
+    "gallery": { "navItem":new CmsNavModel('gallery', 'fa-images', 'gallery', null), "template":HomeComponent},
+    "calender": { "navItem":new CmsNavModel('calender', 'fa-calendar-alt', 'calender', null), "template":CalendarComponent},    
+    "forms": { "navItem":new CmsNavModel('forms', 'fa-clipboard', 'forms', null), "template":HomeComponent}    
   };
 
   public userInfo: UserInfoModel = null;

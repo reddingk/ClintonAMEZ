@@ -5,6 +5,7 @@ import { UserInfoModel } from '../datamodels/userInfoModel';
 import { AnnouncementModel } from '../datamodels/announcementModel';
 import { LineTypeModel } from '../datamodels/lineTypeModel';
 import { MinistryModel } from '../datamodels/ministryModel';
+import { EventsModel } from '../datamodels/eventsModel';
 
 import { startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours } from 'date-fns';
 import { CalendarEvent } from 'angular-calendar';
@@ -114,4 +115,8 @@ export class CoreService {
 
         callback({"errorMessage":null,"results":tmpMins});
     }
+
+    getTmpEvents(callback){
+        
+    }    
 }

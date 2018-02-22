@@ -104,6 +104,7 @@
                     transition: 0.5s all ease; 
                     text-decoration: none;
                     text-transform: capitalize;
+                    display: inline-block;
                     &:hover, &:focus { color: rgba(0,0,0,1); text-decoration: none; }
                 }
             }
@@ -118,6 +119,37 @@
                     }
                     &+.social-link { margin-left: 20px; }
                     &:hover { color: rgba(0,0,0,1);}
+                }
+            }
+        }
+    }
+
+    .additionalMenu {
+        background-color: rgba(150,150,150,1);
+        padding: 30px 20px;     
+        
+        .additionalContainer {
+            max-width: 1350px;
+            margin: 0px auto;            
+            display: flex; 
+            justify-content: center;
+            .add-nav-link {
+                font-size: 1.1rem;
+                padding: 0px 10px;
+                position: relative;
+                margin: auto 0px;
+                transition: 0.5s all ease;
+                cursor: pointer;
+                &:hover { color: @color1; }
+                &+.add-nav-link { margin-left: 30px;}
+
+                a { 
+                    color: rgba(255,255,255,1); 
+                    transition: 0.5s all ease; 
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    display: inline-block;
+                    &:hover, &:focus { color: rgba(0,0,0,1); text-decoration: none; }
                 }
             }
         }

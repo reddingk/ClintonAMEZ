@@ -12,6 +12,7 @@ import { MainComponent} from './components/_main/main';
 import { HomeComponent } from './components/home/home';
 import { AboutUsComponent } from './components/aboutus/aboutus';
 import { HeaderComponent } from './components/templates/header';
+import { FooterComponent } from './components/templates/footer';
 
 
 /* Routes */
@@ -36,7 +37,7 @@ const appRoutes: Routes = [
     NoopAnimationsModule,
     RouterModule.forRoot(appRoutes,{ enableTracing: false } )
   ],
-  declarations: [MainComponent, HomeComponent, AboutUsComponent, HeaderComponent],
+  declarations: [MainComponent, HomeComponent, AboutUsComponent, HeaderComponent, FooterComponent],
   exports: []
 })
 export class SiteModule { }
