@@ -5,6 +5,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AGMaterialModule } from '../../material';
 import { RouterModule, Routes } from '@angular/router';
 import { NgxCarouselModule } from 'ngx-carousel';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
 import 'hammerjs';
 
 /* Site Components */
@@ -34,7 +36,7 @@ const appRoutes: Routes = [
     FormsModule,
     AGMaterialModule,
     NgxCarouselModule,
-    NoopAnimationsModule,
+    NoopAnimationsModule,    
     RouterModule.forRoot(appRoutes,{ enableTracing: false } )
   ],
   declarations: [MainComponent, HomeComponent, AboutUsComponent, HeaderComponent, FooterComponent],

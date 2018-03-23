@@ -5,16 +5,16 @@
             <ngx-item *ngFor="let item of homeCards" NgxCarouselItem>
                 <div class="carousel-page" [ngClass]="getPageType(item.type)" [ngSwitch]="item.type"> 
                     <!-- Full Video -->                   
-                    <div class="carousel-card" *ngSwitchCase="'full-video'">
+                    <div class="carousel-card full-video" *ngSwitchCase="'full-video'">
                         <div class="video-container">
                             <video class="bg-video" autoplay loop muted><source src="{{item.media}}"></video>
                         </div>
                     </div>    
                     <!-- Card Video -->                    
-                    <div class="carousel-card" *ngSwitchCase="'card-video'"></div>
+                    <div class="carousel-card card-video" *ngSwitchCase="'card-video'"></div>
 
                     <!-- Card Image -->
-                    <div class="carousel-card" *ngSwitchDefault>                        
+                    <div class="carousel-card img-card" *ngSwitchDefault>                        
                         <div class="img-container"><img src="{{item.media}}" class="carousel-card-img" alt=""></div>
                         <div class="card-content">
                             <div class="content-title">{{item.title}}</div>

@@ -1,8 +1,10 @@
 import { Component, Output, Input, EventEmitter, HostListener, ViewChild, ElementRef, Renderer } from '@angular/core';
+import {trigger, transition, style, animate, state} from '@angular/animations'
+
 import { CmsNavModel } from '../../../../datamodels/cmsNavModel';
 
 @Component({
-  selector:'my-header',
+  selector:'my-header',  
   templateUrl: './header.html',
   styleUrls: ['./header.less', '../../site.styles.less']
 })

@@ -3,16 +3,37 @@
 .home {
     position: relative;
     .main-carousel {
-        height: calc(~"85vh - 131px");
-        background: rgba(200,200,200,0.5);
-        //.color3(background, 0.2);
+        //height: calc(~"85vh - 131px");
+        height: calc(~"100vh - 131px");
+        //background: rgba(200,200,200,0.5);                       
         overflow: hidden;
         position: relative;
+        background-color:silver;
+        
+        /*
+        background-image: 
+        radial-gradient(circle at 100% 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
+        radial-gradient(circle at 0    150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
+        radial-gradient(circle at 50%  100%, white 10%, silver 11%, silver 23%, white 24%, white 30%, silver 31%, silver 43%, white 44%, white 50%, silver 51%, silver 63%, white 64%, white 71%, transparent 71%, transparent),
+        radial-gradient(circle at 100% 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent),
+        radial-gradient(circle at 0    50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent);
+        */
+
+        background-image: 
+        radial-gradient(circle at 100% 150%, @colorb 24%, white 25%, white 28%, @colorb 29%, @colorb 36%, white 36%, white 40%, transparent 40%, transparent),
+        radial-gradient(circle at 0    150%, @colorb 24%, white 25%, white 28%, @colorb 29%, @colorb 36%, white 36%, white 40%, transparent 40%, transparent),
+        radial-gradient(circle at 50%  100%, white 10%, @colorb 11%, @colorb 23%, white 24%, white 30%, @colorb 31%, @colorb 43%, white 44%, white 50%, @colorb 51%, @colorb 63%, white 64%, white 71%, transparent 71%, transparent),
+        radial-gradient(circle at 100% 50%, white 5%, @colorb 6%, @colorb 15%, white 16%, white 20%, @colorb 21%, @colorb 30%, white 31%, white 35%, @colorb 36%, @colorb 45%, white 46%, white 49%, transparent 50%, transparent),
+        radial-gradient(circle at 0    50%, white 5%, @colorb 6%, @colorb 15%, white 16%, white 20%, @colorb 21%, @colorb 30%, white 31%, white 35%, @colorb 36%, @colorb 45%, white 46%, white 49%, transparent 50%, transparent);
+        
+        background-size:100px 50px;
+
         .home-carousel {
             position: relative;
             height: 100%;
             .carousel-page {                                 
-                height: 100%;                            
+                height: 100%; 
+                position: relative;                           
                                     
                 .carousel-card { 
                     background: rgba(255,255,255,1);                                                                
@@ -20,6 +41,15 @@
                     justify-content: space-between;
                     padding: 30px;
                     max-height: calc(~"100% - 60px");
+                    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+                    
+                    &.img-card {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 70%;
+                    }
                     .video-container { 
                         //position: relative;
                         video { 
@@ -101,13 +131,13 @@
     }
 
     .ourMinistries {
-        padding: 20px 5px 20px 5%;
-        background-color: rgba(150,150,150, 1);
+        padding: 20px 50px;
+        background-color: @color1;
         color: rgba(255,255,255,1);
         position: relative;
         .text-content {
             width: 300px;            
-            padding: 20px 0px;
+            padding: 20px 0px 20px 10px;
             position: absolute;
             z-index: 0;
             h1 { font-size: 2rem;  text-transform: uppercase; margin-bottom: 0px;}
@@ -124,7 +154,7 @@
                 .ministry-card-container {
                     padding: 20px;
                     display: inline-block;
-                    background-color: rgba(150,150,150, 1);
+                    background-color: @color1;
                     .ministry-card {
                         height: 250px;
                         width: 300px;
@@ -162,7 +192,7 @@
             top:0;
             height: 100%;
             width: 50px;
-            color: rgba(50,50,50,1);
+            color: rgba(250,250,250,1);
             opacity: 0.5;
             z-index: 5;
             transition: 0.5s all ease;

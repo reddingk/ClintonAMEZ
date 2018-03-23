@@ -110,8 +110,9 @@ ngx-carousel{
 
     .ngxcarouselPoint {
         li { 
-            background: rgba(200,200,200,0.2) !important;
-            &.active { background: rgba(100,100,100,0.5) !important; }
+            //background: rgba(200,200,200,0.2) !important;
+            .color2(background, 0.2);
+            &.active { .color2(background, 0.7); /*background: rgba(100,100,100,0.5) !important;*/ }
         }
     }
 }
