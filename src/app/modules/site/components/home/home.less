@@ -10,23 +10,29 @@
         position: relative;
         background-color:silver;
         
-        /*
-        background-image: 
-        radial-gradient(circle at 100% 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
-        radial-gradient(circle at 0    150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
-        radial-gradient(circle at 50%  100%, white 10%, silver 11%, silver 23%, white 24%, white 30%, silver 31%, silver 43%, white 44%, white 50%, silver 51%, silver 63%, white 64%, white 71%, transparent 71%, transparent),
-        radial-gradient(circle at 100% 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent),
-        radial-gradient(circle at 0    50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent);
-        */
+        &.background1 {
+            background-image: 
+            radial-gradient(circle at 100% 150%, @colorb 24%, white 25%, white 28%, @colorb 29%, @colorb 36%, white 36%, white 40%, transparent 40%, transparent),
+            radial-gradient(circle at 0    150%, @colorb 24%, white 25%, white 28%, @colorb 29%, @colorb 36%, white 36%, white 40%, transparent 40%, transparent),
+            radial-gradient(circle at 50%  100%, white 10%, @colorb 11%, @colorb 23%, white 24%, white 30%, @colorb 31%, @colorb 43%, white 44%, white 50%, @colorb 51%, @colorb 63%, white 64%, white 71%, transparent 71%, transparent),
+            radial-gradient(circle at 100% 50%, white 5%, @colorb 6%, @colorb 15%, white 16%, white 20%, @colorb 21%, @colorb 30%, white 31%, white 35%, @colorb 36%, @colorb 45%, white 46%, white 49%, transparent 50%, transparent),
+            radial-gradient(circle at 0    50%, white 5%, @colorb 6%, @colorb 15%, white 16%, white 20%, @colorb 21%, @colorb 30%, white 31%, white 35%, @colorb 36%, @colorb 45%, white 46%, white 49%, transparent 50%, transparent);
+            
+            background-size:100px 50px;
+        }
 
-        background-image: 
-        radial-gradient(circle at 100% 150%, @colorb 24%, white 25%, white 28%, @colorb 29%, @colorb 36%, white 36%, white 40%, transparent 40%, transparent),
-        radial-gradient(circle at 0    150%, @colorb 24%, white 25%, white 28%, @colorb 29%, @colorb 36%, white 36%, white 40%, transparent 40%, transparent),
-        radial-gradient(circle at 50%  100%, white 10%, @colorb 11%, @colorb 23%, white 24%, white 30%, @colorb 31%, @colorb 43%, white 44%, white 50%, @colorb 51%, @colorb 63%, white 64%, white 71%, transparent 71%, transparent),
-        radial-gradient(circle at 100% 50%, white 5%, @colorb 6%, @colorb 15%, white 16%, white 20%, @colorb 21%, @colorb 30%, white 31%, white 35%, @colorb 36%, @colorb 45%, white 46%, white 49%, transparent 50%, transparent),
-        radial-gradient(circle at 0    50%, white 5%, @colorb 6%, @colorb 15%, white 16%, white 20%, @colorb 21%, @colorb 30%, white 31%, white 35%, @colorb 36%, @colorb 45%, white 46%, white 49%, transparent 50%, transparent);
-        
-        background-size:100px 50px;
+        &.background2 {
+            background: linear-gradient(to bottom right, #000000, #53346D);
+        }
+                
+        .back-cover { 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 100%;
+            img { width: 100%; height: 100%;}
+        }
 
         .home-carousel {
             position: relative;
@@ -34,21 +40,43 @@
             .carousel-page {                                 
                 height: 100%; 
                 position: relative;                           
-                                    
+                background: rgba(59, 48, 63,0.5);
+                &.cover { background: none;}
                 .carousel-card { 
-                    background: rgba(255,255,255,1);                                                                
+                    background: rgba(96, 87, 99,0.7);                                                                
                     display: flex;
                     justify-content: space-between;
                     padding: 30px;
                     max-height: calc(~"100% - 60px");
-                    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-                    
+                    color: rgba(255,255,255,1);
+                    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);                    
+                    &.cover-title {
+                        background: none;
+                        box-shadow: none;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 70%;
+                        transform: translate(-50%, -50%);
+                        color: rgba(255,255,255,1);
+                        font-weight: bold;
+                        justify-content: center;
+                        text-align: center;
+                        font-size: 75px;
+                        font-family: 'Montserrat Alternates', sans-serif;
+                    }
+
                     &.img-card {
                         position: absolute;
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%, -50%);
-                        width: 70%;
+                        width: 75%;                        
+                        .img-card-container { 
+                            display: flex;
+                            align-items:flex-start;
+                            align-content:flex-start;
+                        }
                     }
                     .video-container { 
                         //position: relative;
@@ -72,7 +100,7 @@
                     }
                     .img-container { 
                         width: 50%;
-                        height: 100%;
+                        //height: 100%;
                         overflow: hidden;
                         display: inline-block;
                         position: relative;
@@ -82,7 +110,13 @@
                         padding: 10px 10px 10px 30px;
                         width: 50%;
                         display: inline-block;
-                        .content-title { font-weight: bold; font-size: 2.5rem; margin-bottom: 10px; }
+                        .content-title { 
+                            font-weight: bold; 
+                            font-size: 2.5rem; 
+                            margin-bottom: 10px; 
+                            text-align: center;
+                            font-family: 'Montserrat Alternates', sans-serif;
+                        }
                         .content-line {
                             &.h1 { font-size: 1.5rem; }
                             &.h2 { font-size: 1.1rem; }
@@ -132,7 +166,7 @@
 
     .ourMinistries {
         padding: 20px 50px;
-        background-color: @color1;
+        background-color: @color3;
         color: rgba(255,255,255,1);
         position: relative;
         .text-content {
@@ -154,7 +188,7 @@
                 .ministry-card-container {
                     padding: 20px;
                     display: inline-block;
-                    background-color: @color1;
+                    background-color: @color3;
                     .ministry-card {
                         height: 250px;
                         width: 300px;
@@ -239,10 +273,36 @@
         }
     }
 
-    .divider {
-        padding: 20px 5px 20px 5%;
-        background-color: rgba(150,150,150, 1);
-        height: 150px;
+    .para-spacer {        
+        position: relative;
+        height: 350px;
+        .cover { 
+            position: absolute;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            background: rgba(20, 20, 20,0.5);
+
+            .cover-text {
+                position: absolute;
+                padding: 5px;
+                top: 50%;
+                left: 5%;
+                transform: translateY(-50%);
+                color: rgba(255,255,255,1);
+                max-width: 40%;
+                font-family: 'Montserrat', sans-serif;
+                .title { font-size: 2.5rem; text-transform: capitalize; font-weight: bold;}
+                .sub-text{ margin-top: 10px; margin-left: 10px; font-size: 1.2rem; color: rgba(200,200,200,1);}
+            }
+        }
+        .spacer1 { 
+            z-index:0;
+            width: 100%;
+            height: 100%;            
+            overflow: hidden;
+            img{ width: 100%; }
+        }
     }
 
     .upcomingEvents {

@@ -6,7 +6,7 @@
     min-height: 90px;    
     transition: 0.4s all ease;
     background: rgba(255,255,255,0.9);
-    border-bottom: 1px solid rgba(150,150,150,0.1);
+    //border-bottom: 1px solid rgba(150,150,150,0.1);
     
     &.fixed-header {
         position: fixed;
@@ -16,7 +16,7 @@
     }
 
     .top-nav { 
-        background-color: @color2;//rgba(200,200,200,1);
+        background-color: @color3;//rgba(200,200,200,1);
         @media @mobile-device { display: none; } 
     }
     .nav-container {
@@ -98,7 +98,7 @@
                 margin: auto 0px;
                 transition: 0.5s all ease;
                 cursor: pointer;
-                &:hover { color: @color1; }
+                &:hover { color: @color3; }
                 &+.nav-link { margin-left: 30px;} 
                 
                 a { 
@@ -126,9 +126,8 @@
         }
     }
 
-    .additionalMenu {
-        //background-color: rgba(150,150,150,1);
-        .color2(background-color, 0.7);
+    .additionalMenu {        
+        .color3(background-color, 0.7);
         padding: 30px 20px; 
         transition: 5s all ease;    
         
@@ -144,7 +143,7 @@
                 margin: auto 0px;
                 transition: 0.5s all ease;
                 cursor: pointer;
-                &:hover { color: @color1; }
+                &:hover { color: @color3; }
                 &+.add-nav-link { margin-left: 30px;}
 
                 a { 

@@ -1,9 +1,15 @@
 <div class="site-page home">
-    <section class="main-carousel">
+    <section class="main-carousel background3">
+        <div class="back-cover"><img src="assets/images/tmpMedia/cover5.jpg"></div>
+
         <ngx-carousel [inputs]="mainCarousel" (carouselLoad)="loadCarousel('home', $event)" class="clinton-carousels home-carousel">
             
             <ngx-item *ngFor="let item of homeCards" NgxCarouselItem>
                 <div class="carousel-page" [ngClass]="getPageType(item.type)" [ngSwitch]="item.type"> 
+                    <!-- Cover Title -->
+                    <div class="carousel-card cover-title" *ngSwitchCase="'cover-title'">
+                        <div class="content-title">{{item.title}}</div>
+                    </div>
                     <!-- Full Video -->                   
                     <div class="carousel-card full-video" *ngSwitchCase="'full-video'">
                         <div class="video-container">
@@ -11,14 +17,16 @@
                         </div>
                     </div>    
                     <!-- Card Video -->                    
-                    <div class="carousel-card card-video" *ngSwitchCase="'card-video'"></div>
+                    <div class="carousel-card card-video" *ngSwitchCase="'card-video'"></div>                    
 
                     <!-- Card Image -->
-                    <div class="carousel-card img-card" *ngSwitchDefault>                        
-                        <div class="img-container"><img src="{{item.media}}" class="carousel-card-img" alt=""></div>
-                        <div class="card-content">
-                            <div class="content-title">{{item.title}}</div>
-                            <div *ngFor="let line of item.lines" [ngClass]="['content-line', line.size, isBold(line.bold)]" [ngStyle]="{'color':line.color}">{{line.text}}</div>
+                    <div class="carousel-card img-card" *ngSwitchDefault> 
+                        <div class="img-card-container">                       
+                            <div class="img-container"><img src="{{item.media}}" class="carousel-card-img" alt=""></div>
+                            <div class="card-content">
+                                <div class="content-title">{{item.title}}</div>
+                                <div *ngFor="let line of item.lines" [ngClass]="['content-line', line.size, isBold(line.bold)]">{{line.text}}</div>
+                            </div>
                         </div>
                     </div>                    
                 </div>
@@ -96,7 +104,15 @@
     </section>
 
     <!-- Divider -->
-    <section class="divider"><div class="spacer1"></div></section>
+    <section class="para-spacer">
+        <div class="cover">
+            <div class="cover-text">
+                <div class="title">"For where two or three are gathered together in my name, there am I in the midst of them...."</div>
+                <div class="sub-text">Matthew 18:20</div>
+            </div>
+        </div>
+        <div class="spacer1"><img src="assets/images/tmpMedia/church2.jpg"></div>
+    </section>
 
     <!-- Get Connected Section -->
     <section class="upcomingEvents">

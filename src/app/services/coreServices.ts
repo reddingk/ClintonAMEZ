@@ -69,28 +69,29 @@ export class CoreService {
         vidAnnouncement.defaultMedia = "assets/images/tmpMedia/tmpVide_mini.JPG";
 
         var tmpList1: LineTypeModel[] = [
-            new LineTypeModel("We are marking our 150th year as a continuing congregation.","#000000", "h1", true),
-            new LineTypeModel("Our vision is to affect a completely transformed community of faith, worthy of citizenship in the Kingdom of God, by the power of God through His Son Jesus Christ. Our mission is to produce ministries that will serve the CAUSE of Christ through the spiritual transformation of minds, bodies and spirits.", "#000000", "paragraph", false),
-            new LineTypeModel("Sunday morning worship services begin at 10:00 AM.  Visitors, we encourage you to be sure to explore our 'Galleries' tab.", "#000000", "paragraph", true)
+            new LineTypeModel("We are marking our 150th year as a continuing congregation.", "h1", true),
+            new LineTypeModel("Our vision is to affect a completely transformed community of faith, worthy of citizenship in the Kingdom of God, by the power of God through His Son Jesus Christ. Our mission is to produce ministries that will serve the CAUSE of Christ through the spiritual transformation of minds, bodies and spirits.", "paragraph", false),
+            new LineTypeModel("Sunday morning worship services begin at 10:00 AM.  Visitors, we encourage you to be sure to explore our 'Galleries' tab.", "paragraph", true)
         ];
         var tmpList2: LineTypeModel[] = [
-            new LineTypeModel("Uplifting and Informative", "#FF3333","h2",true),
-            new LineTypeModel("Music, Wellness,Special Events and Outreach Ministries", "#3361FF","h2",true),
+            new LineTypeModel("Uplifting and Informative", "h2",true),
+            new LineTypeModel("Music, Wellness,Special Events and Outreach Ministries", "h2",true),
             
-            new LineTypeModel("Spiritual Insights", "#FF3333","h2",true),
-            new LineTypeModel("Dynamic monthly 1st Friday Dinner and Seminar", "#3361FF","h2",true),
+            new LineTypeModel("Spiritual Insights", "h2",true),
+            new LineTypeModel("Dynamic monthly 1st Friday Dinner and Seminar", "h2",true),
 
-            new LineTypeModel("Engaging Youth and Children Ministries", "#FF3333","h2",true),
-            new LineTypeModel("Including Children’s Church", "#3361FF","h2",true),
+            new LineTypeModel("Engaging Youth and Children Ministries", "h2",true),
+            new LineTypeModel("Including Children’s Church", "h2",true),
         ];
         var tmpList3: LineTypeModel[] = [
-            new LineTypeModel("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "#000000", "p", false),
-            new LineTypeModel("Date: February 18, 2018", "#000000","p",true),
-            new LineTypeModel("Time: 2pm", "#000000","p",true)
+            new LineTypeModel("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "p", false),
+            new LineTypeModel("Date: February 18, 2018", "p",true),
+            new LineTypeModel("Time: 2pm", "p",true)
         ];
 
         var retList: AnnouncementModel[] = [
-            vidAnnouncement,
+            //vidAnnouncement,
+            new AnnouncementModel("", "cover-title","Welcome To Clinton", []),            
             new AnnouncementModel("assets/images/tmpMedia/pastor1.jpg","card-img", "Welcome", tmpList1),
             new AnnouncementModel("assets/images/tmpMedia/Clinton_2012.jpg","card-img", "Clinton For Your Spirit, Mind and Body", tmpList2),
             new AnnouncementModel("assets/images/tmpMedia/Homecoming-Flyer.png","card-img", "New Event", tmpList3)
