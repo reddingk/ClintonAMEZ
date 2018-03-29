@@ -71,11 +71,20 @@
                 display: flex;                
                 text-decoration: none;
                 color: rgba(0,0,0,1);
-                img { height: 75px;}
+                &.c-logo { flex-direction: column; }
+
+                .logo { height: 75px;}
+                .c-logo { height: 50px;}
+
                 .title-text {                                         
                     padding-top: 5px;
                     .lrg-title { font-size: 2.7rem; font-weight: bold; }
                     .sm-title { padding-left: 15px; font-size: 1rem; }
+                }
+                .sub-title-text {
+                    display: block;                    
+                    font-family: 'Homemade Apple', cursive;                    
+                    .sm-title { text-align: right; font-size: 12px; font-weight: bold; }
                 }
             }
         }
@@ -97,7 +106,9 @@
                 position: relative;
                 margin: auto 0px;
                 transition: 0.5s all ease;
-                cursor: pointer;
+                cursor: pointer;                
+                font-family: 'Montserrat Alternates', sans-serif;                
+
                 &:hover { color: @color3; }
                 &+.nav-link { margin-left: 30px;} 
                 
@@ -129,7 +140,8 @@
     .additionalMenu {        
         .color3(background-color, 0.7);
         padding: 30px 20px; 
-        transition: 5s all ease;    
+        transition: 5s all ease;  
+        font-family: 'Montserrat Alternates', sans-serif;    
         
         .additionalContainer {
             max-width: 1350px;
