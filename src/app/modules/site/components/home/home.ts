@@ -6,7 +6,7 @@ import { NgxCarousel } from 'ngx-carousel';
 import { LineTypeModel } from '../../../../datamodels/lineTypeModel';
 import { AnnouncementModel } from '../../../../datamodels/announcementModel';
 import { MinistryModel } from '../../../../datamodels/ministryModel';
-
+import { EventsModel } from '../../../../datamodels/eventsModel';
 /* Services */
 import { CoreService } from '../../../../services/coreServices';
 
@@ -17,8 +17,11 @@ import { CoreService } from '../../../../services/coreServices';
 })
 export class HomeComponent implements OnInit {
   public mainCarousel: NgxCarousel;
+  public eventsCarousel: NgxCarousel;
+
   public homeCards: AnnouncementModel[];
   public ministryList: MinistryModel[];
+  public eventsList: EventsModel[];
   public intervalId = null;
   public mobileCheck = new RegExp('Android|webOS|iPhone|iPad|' + 'BlackBerry|Windows Phone|'  + 'Opera Mini|IEMobile|Mobile' , 'i');
   
@@ -31,8 +34,17 @@ export class HomeComponent implements OnInit {
       point: { visible: true },
       load: 2, touch: true, loop: true, custom: 'banner'
     }
+
+    this.eventsCarousel = {
+      grid: {xs: 2, sm: 3, md: 3, lg: 3, all: 0},
+      slide: 3, speed: 0, interval: 0,
+      point: { visible: true },
+      load: 3, touch: true, loop: false, custom: 'banner'
+    }
+
     this.loadAnnouncements();
     this.loadMinistries();
+    this.loadEvents();
   }
   
   public loadCarousel(loadType:string, event: Event) { }
@@ -51,6 +63,15 @@ export class HomeComponent implements OnInit {
     this.coreService.getMinistries(function(res){
       if(!res.errorMessage){
         self.ministryList = res.results;
+      }
+    });
+  }
+
+  public loadEvents(){
+    var self = this;
+    this.coreService.getTmpEvents(function(res){
+      if(!res.errorMessage){
+        self.eventsList = res.results;
       }
     });
   }

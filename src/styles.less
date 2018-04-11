@@ -104,9 +104,19 @@ ngx-carousel{
             &.prev { left: 10px;}
             &.next { right: 10px;}   
             &:hover { color: rgba(255,255,255,1);}
+
+            &.c3 { .color3(color, 0.5); &:hover { color: @color3 !important;}}
             @media @mobile-device { display: none !important; }
         }
     }
+
+    &.tile-carousel { 
+        .ngxcarousel-inner {  
+            width: 85%; 
+            margin: 0px auto;
+            @media @mobile-device { width: 100%;}
+        }
+    } 
 
     .ngxcarouselPoint {
         display: none;

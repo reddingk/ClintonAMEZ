@@ -118,6 +118,13 @@ export class CoreService {
     }
 
     getTmpEvents(callback){
-        
+        var tmpEvents: EventsModel[] = [
+            new EventsModel("Leadership Meeting", addDays(new Date(), 3), "1 Test Street, Gaithersburg, MD. 20878"),
+            new EventsModel("Test Event 2", addDays(new Date(), 7), "1 Test Street, Gaithersburg, MD. 20878"),
+            new EventsModel("Test Event 3", addDays(new Date(), 14), "1 Test Street, Gaithersburg, MD. 20878"),
+            new EventsModel("Leadership Meeting 2", addDays(new Date(), 15), "1 Test Street, Gaithersburg, MD. 20878"),
+            new EventsModel("Leadership Meeting 3", addDays(new Date(), 20), "1 Test Street, Gaithersburg, MD. 20878")
+        ];
+        callback({"errorMessage":null,"results":tmpEvents});
     }    
 }

@@ -39,22 +39,31 @@
 
     <!-- Get Connected Section -->
     <section class="getConnected">
-        <h1>Get Connected</h1>
+        <h1 class="font-title1">Get Connected</h1>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
         <div class="cards-holder">
             <div class="card service">
                 <div class="card-container">
-                    <div class="card-title">Service Times</div>
+                   <div class="card-title">
+                        <div class="icon-header"><div class="icon-container c2"><i class="icon-center far fa-clock"></i></div></div>
+                        <div class="text">Service Times</div>
+                    </div>
                 </div>
             </div>
             <div class="card prayer">
-                <div class="card-container">
-                    <div class="card-title">Prayer Call</div>
+                <div class="card-container">                    
+                    <div class="card-title">
+                        <div class="icon-header c4"><div class="icon-container c4"><i class="icon-center fas fa-phone"></i></div></div>
+                        <div class="text">Prayer Call</div>
+                    </div>
                 </div>
             </div>
             <div class="card bible">
                 <div class="card-container">
-                    <div class="card-title">Bible Study</div>
+                   <div class="card-title">
+                        <div class="icon-header c5"><div class="icon-container c5"><i class="icon-center fab fa-audible"></i></div></div>
+                        <div class="text">Bible Study</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -63,7 +72,7 @@
     <!-- Ministries Section -->
     <section class="ourMinistries">
         <div class="text-content">
-            <h1>Ministries</h1>
+            <h1 class="font-title1">Ministries</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
         
@@ -92,7 +101,7 @@
     <!-- Welcome From Our Pastor -->
     <section class="welcome">
         <div class="text-content">
-            <h1>Welcome From Our Pastor</h1>
+            <h1 class="font-title1">Welcome From Our Pastor</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
 
@@ -120,7 +129,37 @@
 
     <!-- Get Connected Section -->
     <section class="upcomingEvents">
-        <h1>Upcoming Events</h1>
-        
+        <h1 class="font-title1">Upcoming Events</h1>
+         <ngx-carousel [inputs]="eventsCarousel" (carouselLoad)="loadCarousel('events', $event)" class="clinton-carousels tile-carousel events-carousel">
+            
+            <ngx-item *ngFor="let event of eventsList" NgxCarouselItem>
+                <div class="details-container">
+                    <div class="event-container">
+                        <div class="event-details-container event-date">
+                            <div class="date-day">{{event.date | date:'dd'}}</div>
+                            <div class="date-month">{{event.date |  date: 'MMM'}}</div>
+                        </div>
+                        <div class="event-details-container event-info">
+                            <div class="info-title">{{event.title}}</div>
+                            <div class="info-time">{{event.date | date:'shortTime'}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-item> 
+            
+            <!-- More Events Button -->
+            <ngx-item NgxCarouselItem>
+                <div class="details-container">
+                    <div class="event-container">
+                         <div class="event-details-container event-more-info">
+                             <h2>View Our Calendar For More Events</h2>
+                         </div>
+                    </div>
+                </div>
+            </ngx-item>
+            <!-- Controls -->
+            <div NgxCarouselPrev class="carousel-ctrl c3 prev"><i class="fas fa-chevron-left"></i></div>
+            <div NgxCarouselNext class="carousel-ctrl c3 next"><i class="fas fa-chevron-right"></i></div>
+        </ngx-carousel>
     </section>
 </div>
