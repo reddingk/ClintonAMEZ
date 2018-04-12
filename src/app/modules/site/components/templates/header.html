@@ -41,7 +41,7 @@
     </div>
 
     <!-- Additional Menu -->
-    <div class="additionalMenu" *ngIf="additonalMenu.display == true" (mouseleave)="hideAdditionalMenu()">
+    <div class="additionalMenu" *ngIf="additonalMenu.display == true" (mouseleave)="hideAdditionalMenu()" [@slideDownNav]>
         <div class="additionalContainer">
             <div class="add-nav-link" *ngFor="let item of additonalMenu.items">
                 <a [href]="item.page">{{item.title}}</a>

@@ -1,11 +1,33 @@
 import { Component, Output, Input, EventEmitter, HostListener, ViewChild, ElementRef, Renderer } from '@angular/core';
-import {trigger, transition, style, animate, state} from '@angular/animations'
+import {trigger, transition, style, animate, keyframes, query, stagger, group, state, animateChild} from '@angular/animations'
 
 import { CmsNavModel } from '../../../../datamodels/cmsNavModel';
 
 @Component({
   selector:'my-header',  
   templateUrl: './header.html',
+  animations:[
+    trigger('slideDownNav',[
+      transition('void => *',[
+        query('*', style({ opacity: 0})),
+        query('*', stagger('300ms', [
+          animate('0.8s ease-in', keyframes([
+            style({opacity: 0, transform: 'translateY(-75%)'}),
+            style({opacity: 1, transform: 'translateY(0)'})
+          ]))
+        ]))
+      ]),
+      transition('* => void',[
+        query('*', style({ opacity: 1})),
+        query('*', stagger('300ms', [
+          animate('0.8s ease-in', keyframes([
+            style({opacity: 1, transform: 'translateY(0)'}),
+            style({opacity: 0, transform: 'translateY(-75%)'})
+          ]))
+        ]))
+      ])
+    ])
+  ],
   styleUrls: ['./header.less', '../../site.styles.less']
 })
 export class HeaderComponent {

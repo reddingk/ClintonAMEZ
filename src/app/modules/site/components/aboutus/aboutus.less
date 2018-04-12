@@ -6,10 +6,13 @@
     .body-section {        
         position: relative;  
         h1 { margin: 0px 0px 20px; font-size: 3rem; text-align: center;}
-        &.full-txt {padding: 40px 5%;}
+        &.full-txt {padding: 40px 5%; font-size: 1.2rem;}
         &.img-txt {
             display: flex;
-            &.c1 { background: rgba(150,150,150,1); color: rgba(255,255,255,1);}
+            font-size: 1.2rem;
+            &.c1 { background: @color1; color: rgba(255,255,255,1);}
+            &.c3 { background: @color3; color: rgba(255,255,255,1);}
+
             .img-content { 
                 position: relative;
                 overflow: hidden;
@@ -24,22 +27,6 @@
                 display: inline-block;
                 h1{ font-weight: initial; span { font-weight: bold;}}
             }
-        }
-        &.notched-top { 
-            position: relative;        
-            &:before {
-                content: '';
-                display: inline-block;
-                position: absolute;
-                top: -@notchSize;
-                left: 50%;
-                transform: translateX(-50%);
-                height: @notchSize;
-                width: @notchSize *2;
-                background-color: rgba(250,250,250,1);
-                border-top-left-radius: @notchSize * 2;
-                border-top-right-radius: @notchSize * 2;
-            }            
         }
     }
 }
