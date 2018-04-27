@@ -5,7 +5,7 @@ import { CmsNavModel } from '../../../../datamodels/cmsNavModel';
 
 @Component({
   selector:'my-header',  
-  templateUrl: './header.html',
+  templateUrl: './_header.html',
   animations:[
     trigger('slideDownNav',[
       transition('void => *',[
@@ -28,7 +28,7 @@ import { CmsNavModel } from '../../../../datamodels/cmsNavModel';
       ])
     ])
   ],
-  styleUrls: ['./header.less', '../../site.styles.less']
+  styleUrls: ['./_header.less', '../../site.styles.less']
 })
 export class HeaderComponent {
     @Output() toggleEvent = new EventEmitter<string>();

@@ -21,6 +21,15 @@
 @color5: rgba(48,137,201,1);
 .color5(@prop,@val){ @{prop}: rgba(48,137,201,@val) !important; }
 
+@color6: rgba(194,146,45,1);
+.color6(@prop,@val){ @{prop}: rgba(194,146,45,@val) !important; }
+
+@color7: rgba(251,206,65,1);
+.color7(@prop,@val){ @{prop}: rgba(251,206,65,@val) !important; }
+
 @colorb: rgba(230,230,230,1);
+
+.backgroundGradient(@val){ background: linear-gradient(45deg, rgba(134,54,148,@val) 20%,  rgba(230,38,37,@val) 60%, rgba(251,206,65,@val)); }
+.backgroundGradient2(@val){ background: linear-gradient(45deg, rgba(114,97,147,@val) 20%,  rgba(227,123,124,@val) 60%, rgba(255,228,180,@val)); }
 
 @notchSize: 50px;

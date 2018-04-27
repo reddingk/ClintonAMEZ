@@ -1,0 +1,42 @@
+@import (reference) "../../../variables.less";
+
+.our-staff {
+    .staffList {
+        padding: 30px 5%;
+        text-align: center;
+
+        .staffTeamContainer {
+            margin-bottom: 50px;
+            box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+            border-radius: 4px;
+            &:before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 3px;
+                margin-bottom: 5px;
+                .backgroundGradient2(1);
+            }
+            
+            .content-container {
+                padding: 0px 0 30px;
+                position: relative;
+                overflow:hidden;
+
+                h2 { 
+                    .backgroundGradient2(0.7); 
+                    color: #fff; 
+                    font-weight: bold; 
+                    font-size: 2.5rem;
+                    margin-top:0px;
+                }
+                .teamMember {
+                    
+                    .member-name { font-weight: bold; font-size: 1.4rem; }
+                    .member-title { color: @color4; font-style: italic; font-size: 1.2rem;}
+                    &+.teamMember { margin-top: 20px;}
+                }
+            }
+        }
+    }
+}

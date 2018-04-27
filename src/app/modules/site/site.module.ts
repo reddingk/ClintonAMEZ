@@ -15,6 +15,7 @@ import { MainComponent} from './components/_main/main';
 import { HomeComponent } from './components/home/home';
 import { AboutUsComponent } from './components/aboutus/aboutus';
 import { OurHistoryComponent } from './components/ourHistory/ourHistory';
+import { OurStaffComponent } from './components/ourStaff/ourStaff';
 
 /* Templates */
 import { HeaderComponent } from './components/templates/header';
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
             { path:'', component: HomeComponent },
             { path:'about-us', component: AboutUsComponent },
             { path:'about-us', children:[
-                {path:'our-history', component: OurHistoryComponent}
+                {path:'our-history', component: OurHistoryComponent},
+                {path:'our-staff', component: OurStaffComponent}
             ]}
         ]
     }  
@@ -48,7 +50,7 @@ const appRoutes: Routes = [
     NoopAnimationsModule,    
     RouterModule.forRoot(appRoutes,{ enableTracing: false } )
   ],
-  declarations: [ MainComponent, HomeComponent, AboutUsComponent, OurHistoryComponent, HeaderComponent, FooterComponent, PicBookComponent ],
+  declarations: [ MainComponent, HomeComponent, AboutUsComponent, OurHistoryComponent, OurStaffComponent, HeaderComponent, FooterComponent, PicBookComponent ],
   exports: []
 })
 export class SiteModule { }

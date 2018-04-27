@@ -1,0 +1,21 @@
+<div class="site-page our-staff">
+    <section class="title-card">
+        <h1 class="font-title1">Our Staff</h1>
+        <div class="back-img">
+            <div class="cover c3c2"></div>
+        </div>
+    </section>
+    
+    <section class="body-section staffList notched-top">
+        <div class="staffTeamContainer" *ngFor="let team of staffList">
+            <div class="content-container">
+                <h2>{{team.name}}</h2>
+
+                <div class="teamMember" *ngFor="let member of team.members">
+                    <div class="member-name">{{member.name}}</div>
+                    <div class="member-title">{{member.title}}</div>
+                </div>
+            </div>
+        </div>
+    </section>     
+</div>

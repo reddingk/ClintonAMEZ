@@ -9,10 +9,10 @@ import { CmsNavModel } from '../../../../datamodels/cmsNavModel';
     constructor(){ }   
 
     public navitems: CmsNavModel[] = [
-      new CmsNavModel("about us", null, 'site/about-us', [new CmsNavModel("our history", null, 'site/about-us/our-history', null), new CmsNavModel("our staff", null, '', null),new CmsNavModel("service information", null, '', null),new CmsNavModel("inside zion", null, 'http://www.amez.org/', null)]),
-      new CmsNavModel("get connected", null, '', [new CmsNavModel("events calender", null, '', null), new CmsNavModel("clinton resources", null, '', null)]),
-      new CmsNavModel("ministries", null, '', null),
+      new CmsNavModel("about us", null, 'site/about-us', [new CmsNavModel("our history", null, 'site/about-us/our-history', null), new CmsNavModel("our staff", null, 'site/about-us/our-staff', null),new CmsNavModel("service information", null, '', null),new CmsNavModel("inside zion", null, 'http://www.amez.org/', null)]),
       new CmsNavModel("pastors page", null, '', null),
+      new CmsNavModel("ministries", null, '', null),
+      new CmsNavModel("get connected", null, '', [new CmsNavModel("events calender", null, '', null), new CmsNavModel("clinton resources", null, '', null)]),
       new CmsNavModel("gallery", null, '', null),
       new CmsNavModel("contact us", null, '', null)
     ];
