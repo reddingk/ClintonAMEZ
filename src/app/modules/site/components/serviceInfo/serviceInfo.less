@@ -1,0 +1,35 @@
+@import (reference) "../../../variables.less";
+
+.our-service {
+    .serviceInfo {
+        padding: 50px 5%;
+        .service-card { 
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+            display: flex;
+            max-height: 400px;
+            .church-img { width: 50%; overflow:hidden; img{ height: 100%; min-width: 100%;}}
+            .service-content { 
+                padding: 30px 10px;
+                text-align: center;
+                flex: 1;
+                font-size: 1.5rem;
+                .content-info  {
+                    &+.content-info { margin-top: 20px;}
+                    .info-txt { 
+                        font-family: 'Homemade Apple', cursive;                          
+                        color: @color4;
+                        p { margin: 0; }
+                    }
+                    p { margin: 0; }
+                    .service-info {
+                        &+.service-info { margin-top: 15px;}
+                        .title { font-weight: bold;}
+                        .time { }
+                    }
+                }
+            }
+        }
+    }
+}
